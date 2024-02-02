@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="C:\Users\singhr146\OneDrive - Vodafone Group\Desktop\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    
+    <!-- responsive navbar with background image -->
+    
+    <header class="header">
+        <nav class="nav-header">
+            <a href="#" class="logo">Ritu</a>
+            <i class="fa-solid fa-bars menu"></i>
+            <ul class="nav-menu">
+                <i class="fa-solid fa-xmark cancel"></i>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </nav>
+
+        <div class="slider-container">
+            <div class="slider-box fade">
+                <div class="slider-image">
+                    <img src="C:\Users\singhr146\OneDrive - Vodafone Group\Desktop\download (2).jpg" alt="">
+                </div>
+                <div class="slider-content">
+                    <h1>image 1</h1>
+                </div>
+            </div>
+
+            <div class="slider-box fade">
+                <div class="slider-image">
+                    <img src="C:\Users\singhr146\OneDrive - Vodafone Group\Desktop\download (1).jpg" alt="">
+                </div>
+                <div class="slider-content">
+                    <h1>image 2</h1>
+                </div>
+            </div>
+
+            <div class="slider-box fade">
+                <div class="slider-image">
+                    <img src="C:\Users\singhr146\OneDrive - Vodafone Group\Desktop\download.jpg" alt="">
+                </div>
+                <div class="slider-content">
+                    <h1>image 3</h1>
+                </div>
+            </div>
+            
+                <a href="#" class="prev" onclick="plusslide(-1)"><</a>
+                <a href="#" class="next" onclick="plusslide(1)">></a>
+                
+        </div>
+    </header>
+
+    <section class="hero">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis excepturi voluptatibus pariatur, velit architecto animi fuga beatae. Eum officiis fugit itaque repudiandae consequatur odit laudantium, eligendi beatae deserunt dolorem recusandae quibusdam perferendis eveniet odio eos et. Recusandae, unde eius illum laboriosam fugit cupiditate aliquid ea at pariatur fuga dicta totam alias modi doloremque nesciunt voluptatum officia exercitationem voluptas quo accusantium dolor! Tempore possimus nulla sapiente itaque esse cum doloremque id minus error optio, unde deserunt. Sapiente, omnis impedit delectus, ullam atque facilis voluptates, dolor mollitia praesentium autem est. Eius totam facilis veritatis animi voluptate recusandae ea autem quas voluptatem ducimus?
+    </section>
+
+    <script>
+        console.log("ritu")
+
+        const menu=document.querySelector(".menu")
+        const cancel=document.querySelector(".cancel")
+        const nav_menu=document.querySelector(".nav-menu")
+
+        menu.addEventListener("click",function(){
+            nav_menu.classList.add("active");
+            menu.classList.add("active")
+            cancel.classList.add("active")
+        })
+
+        cancel.addEventListener("click",function(){
+            nav_menu.classList.remove("active")
+            cancel.classList.remove("active")
+            menu.classList.remove("active")
+        })
+
+        const slider_box=document.querySelectorAll(".slider-box")
+
+        let currentslide=1;
+        slideshow(currentslide)
+
+        console.log(slider_box.length)
+
+        function plusslide(n){
+            currentslide=currentslide+n;
+            slideshow(currentslide)
+        }
+
+        function slideshow(n){
+            for(let i=0;i<slider_box.length;i++){
+                slider_box[i].style.display="none"
+            }
+
+            if(n>slider_box.length){
+                currentslide=1;
+            }
+
+            if(n<1){
+                currentslide=slider_box.length;
+            }
+
+            slider_box[currentslide-1].style.display="block"
+        }
+
+        
+        
+    </script>
+</body>
+</html>
